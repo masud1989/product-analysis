@@ -1,7 +1,9 @@
 import React from 'react';
+import useReviews from '../hooks/useReviews';
 import phone from './banar-img.jpg';
 
 const Home = () => {
+    const [reviews, setReviews] = useReviews([]);
     return (
         <div className='hn'>
             <div className="grid grid-cols-2 gap-4">
@@ -17,9 +19,9 @@ const Home = () => {
                     <img className='mt-10 px-10' src={phone} alt="" />
                 </div>
             </div>
-            <h1 className='text-4xl text-center mt-20 font-bold'>Customer Reviews</h1>
+            <h1 className='text-4xl text-center mt-20 font-bold'>Customer Reviews({reviews.length})</h1>
             <div className='.grid grid-cols-3 gap-4 bg-green-300'>
-                <button className='bg-blue-300'>Reviews</button>
+                <button className='bg-blue-300'>Reviews:{reviews.length}</button>
 <h1>asa</h1>
 <h1>asa</h1>
 <h1>asa</h1>

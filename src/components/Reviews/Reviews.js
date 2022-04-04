@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react';
 
-const Reviews = () => {
-    const [reviews, setReviews] = useState([]);
+// import useReviews from "../hooks/useReviews";
+import useReviews from '../hooks/useReviews';
 
-    useEffect(() => {
-        fetch('fakedb.json')
-            .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [])
+
+const Reviews = () => {
+    // const [reviews, setReviews] = useState([]);
+    // const [reviews, useReviews] = useReviews([]);
+    const [reviews, setReviews] = useReviews([]);
+
+    // useEffect(() => {
+    //     fetch('fakedb.json')
+    //         .then(res => res.json())
+    //         .then(data => setReviews(data))
+    // }, [])
 
     return (
         <div className='grid grid-cols-3 gap-6 mt-10'>
@@ -15,7 +21,7 @@ const Reviews = () => {
                 reviews.map(review =>
                     <div className="max-w-sm rounded overflow-hidden shadow-lg">
                         {/* <img src={product.image} alt="" /> */}
-                        <img style={{ width: "150px", height: "200px", display: "block", margin: "auto" }} className="w-full" src={review.img} alt="Sunset in the mountains" />
+                        <img style={{ width: "250px", height: "300px", display: "block", margin: "auto", borderRadius:"150px" }} className="w-full" src={review.img} alt="Sunset in the mountains" />
                         <div className="px-6 py-4">
                             <div className="font-bold text-xl mb-2">{review.name}</div>
                             <p className="text-gray-700 text-base">
