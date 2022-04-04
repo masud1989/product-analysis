@@ -22,3 +22,6 @@ By using HTML tags that have meaning, you create pages that impart more informat
 };
 
 export default Blogs;
+
+// Repo Link: https://github.com/programming-hero-web-course-4/product-analysis-website-masud1989
+// Live site Link: https://masud-phone-reviews.netlify.app/ 
