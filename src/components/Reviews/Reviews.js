@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 
 // import useReviews from "../hooks/useReviews";
 import useReviews from '../hooks/useReviews';
@@ -19,9 +19,10 @@ const Reviews = () => {
         <div className='grid grid-cols-3 gap-6 mt-10'>
             {
                 reviews.map(review =>
+                    
                     <div className="max-w-sm rounded overflow-hidden shadow-lg">
                         {/* <img src={product.image} alt="" /> */}
-                        <img style={{ width: "250px", height: "300px", display: "block", margin: "auto", borderRadius:"150px" }} className="w-full" src={review.img} alt="Sunset in the mountains" />
+                        <img style={{ width: "250px", height: "300px", display: "block", margin: "auto", borderRadius:"150px" }} className="w-full" key={review.id} src={review.img} alt="Sunset in the mountains" />
                         <div className="px-6 py-4">
                             <div className="font-bold text-xl mb-2">{review.name}</div>
                             <p className="text-gray-700 text-base">

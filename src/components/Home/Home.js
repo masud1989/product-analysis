@@ -4,6 +4,7 @@ import phone from './banar-img.jpg';
 
 const Home = () => {
     const [reviews, setReviews] = useReviews([]);
+    const firstThreeReview = reviews.slice(0, 3);
     return (
         <div className='hn'>
             <div className="grid grid-cols-2 gap-4">
@@ -20,12 +21,26 @@ const Home = () => {
                 </div>
             </div>
             <h1 className='text-4xl text-center mt-20 font-bold'>Customer Reviews({reviews.length})</h1>
-            <div className='.grid grid-cols-3 gap-4 bg-green-300'>
-                <button className='bg-blue-300'>Reviews:{reviews.length}</button>
-<h1>asa</h1>
-<h1>asa</h1>
-<h1>asa</h1>
-<h1>asa</h1>
+            <div className='.grid grid-cols-3 gap-4'>
+                <div className='grid grid-cols-3 gap-6 mt-10 mx-10' >
+                    {
+                        firstThreeReview.map(review =>
+                            <div className="max-w-sm rounded overflow-hidden shadow-lg">
+                                {/* <img src={product.image} alt="" /> */}
+                                <img style={{ width: "250px", height: "300px", display: "block", margin: "auto", borderRadius: "150px" }} className="w-full" key={review.id} src={review.img} alt="Sunset in the mountains" />
+                                <div className="px-6 py-4">
+                                    
+                                    <div className="font-bold text-xl mb-2">{review.name}</div>
+                                    <p className="text-gray-700 text-base">
+                                        {review.body.length > 100 ? review.body.slice(0, 100) : review.body}
+                                        {review.body}
+                                    </p>
+                                </div>
+                            </div>
+                        )
+                    }
+                    <p className='text-center'><button className='bg-green-500 mx-400'>Review All</button></p>
+                </div>
             </div>
         </div>
     );
