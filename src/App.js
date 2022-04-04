@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 
+
 function App() {
   return (
     <div className="App">
@@ -11,7 +12,7 @@ function App() {
       <Routes>
           <Route path='/' element={<Home></Home>}></Route>
       </Routes>
-      
+
     </div>
   );
 }
